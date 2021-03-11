@@ -203,4 +203,12 @@ class PeakValleyLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : PeakValleyLineView {
+            val view : PeakValleyLineView = PeakValleyLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
