@@ -1,0 +1,3 @@
+include ':peakvalleylineview'
+include ':app'
+rootProject.name = "LinkedPeakValleyLineView"
