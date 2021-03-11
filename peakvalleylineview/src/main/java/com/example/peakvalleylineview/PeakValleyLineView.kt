@@ -73,7 +73,7 @@ class PeakValleyLineView(ctx : Context) : View(ctx) {
     data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Float = 0f) {
 
         fun update(cb : (Float) -> Unit) {
-            scale += prevScale * dir
+            scale += scGap * dir
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
                 dir = 0f
@@ -130,6 +130,7 @@ class PeakValleyLineView(ctx : Context) : View(ctx) {
         fun addNeighbor() {
             if (i < colors.size - 1) {
                 next = PVLNode(i + 1)
+                next?.prev = this
             }
         }
 
